@@ -53,7 +53,7 @@ public class BookFlightController {
 		Flight flightDetails = (Flight) model.get("flightDetails");
 		PassengerDetailsDTO passengerDetailsDTO=(PassengerDetailsDTO)model.get("passengerDetailsDTO");
 		bookFlightService.addBookingDetails(flightDetails,passengerDetailsDTO);
-		return "/Bookflight.jsp";
+		return "/ticketPrint.jsp";
 	}
 
 	
