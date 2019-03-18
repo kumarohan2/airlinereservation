@@ -10,6 +10,7 @@ package com.lti.dto;
 		
 		private List<PassengerDetails> passengerDetails = new ArrayList<PassengerDetails>();
 		private long mobileNo;
+
 		
 		public List<PassengerDetails> getPassengerDetails() {
 			return passengerDetails;

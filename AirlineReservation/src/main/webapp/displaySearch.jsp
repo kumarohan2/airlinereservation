@@ -9,35 +9,63 @@
 <title>Flight Details</title>
 </head>
 <style>
-div {
-  background-color: lightgrey;
-  width: 150px;
+
+.filter {
+
+  width: 140px;
   border: 15px Black;
   padding: 25px;
   margin: 10px;
 }
+
 th {
   padding-top: 25px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+   background-color: #000000;
   color: white;
   position:relative;
+ 
 }
-/* table {
+/*  table {
+    vertical-align: top;
 padding-top: 5px;
   border-collapse: collapse;
   width: 65%;
-} */
-table {
-    vertical-align: top;
+}  */
+
+.right {
+width:75%;
+float: left;
 }
+
+.left {
+width:25%;
+float:left;
+height : 100%;
+}
+
+ html{
+            background: url('images/airline.jpg') no-repeat center center fixed;
+            webkit-background-size:cover;
+            moz-background-size:cover;
+            background-size:cover;
+            background-size:cover;
+            background-position: 0 0;
+            font-weight:bold;
+        }
+
 
 </style>
 
 <body>
-<form action="controller/initiateBooking">
-<div>
+  
+
+
+<form action="controller/initiateBooking" >
+<div class="left">
+<div class="filter">
+
 <input type="radio" name="time" value="before12" onclick="resetFilters()" >Reset All Filters<br><br>
 
 
@@ -52,9 +80,14 @@ table {
 
 </c:forEach>
 </div>
+</div>
 
+  
+   
+        
+<div style="text-align:center; vertical-align:top" class="right"> 
 <h1 align="center">Details of All the Flight</h1>
-<table align="center" style="float: top;">
+<table align="center"  style="display:inline;" border="1" font:bold>
 
 <tr>
 <th >Source:</th>
@@ -63,7 +96,8 @@ table {
 <th>Arrival Time</th>
 <th>Flight Name</th>
 <th>Flight Price</th>
-<th>No of seats</th></tr>
+<th>No of seats</th>
+<th> Click here</th></tr>
 
 <c:forEach items="${ listOfFlight }" var = "flight">
     <tr>
@@ -84,7 +118,8 @@ table {
 		</tr>
 	<tr>
 </c:forEach>
-
+  </table>
+</form>
 
 <script>
 function morningFlight(){
@@ -104,6 +139,8 @@ function loadFlights(carrier) {
 }
 </script>
 
-  </table>
+
+
+  
 </body>
 </html>

@@ -22,8 +22,8 @@ public class FlightSearchService {
 		Flight flight = new Flight();
 		flight.setSource(flightSearchDTO.getSource());
 		flight.setDestination(flightSearchDTO.getDestination());
-		flight.setArivalTime(Double.parseDouble(flightSearchDTO.getArivalTime()));
-		flight.setDepartureTime(Double.parseDouble(flightSearchDTO.getDepartureTime()));
+	//	flight.setArivalTime(Double.parseDouble(flightSearchDTO.getArivalTime()));
+	//	flight.setDepartureTime(Double.parseDouble(flightSearchDTO.getDepartureTime()));
 
 		flightSearchDao.addDetails(flight);
 	}

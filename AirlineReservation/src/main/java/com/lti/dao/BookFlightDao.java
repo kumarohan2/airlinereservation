@@ -1,16 +1,13 @@
 package com.lti.dao;
-	import java.util.List;
-
 	import javax.persistence.EntityManager;
-	import javax.persistence.PersistenceContext;
-	import javax.persistence.Query;
+import javax.persistence.PersistenceContext;
 
-	import org.springframework.stereotype.Repository;
-	import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-	import com.lti.dto.FlightDetailsDTO;
-	import com.lti.entity.FlightDetails;
-	import com.lti.entity.PassengerDetails;
+import com.lti.entity.BookingDetails;
+import com.lti.entity.Flight;
+import com.lti.entity.PassengerDetails;
 
 	@Repository
 	public class BookFlightDao {
@@ -23,9 +20,9 @@ package com.lti.dao;
 		}
 		
 		
-		public FlightDetails fetchFlightDetails(int flightid) {
+		public Flight fetchFlightDetails(int flightid) {
 			//Query query=entityManager.createQuery("select Flight from FlightDetails as Flight where Flight.FlightId=:id");
-			FlightDetails flightDetails=entityManager.find(FlightDetails.class, flightid);
+			Flight flightDetails=entityManager.find(Flight.class, flightid);
 			return flightDetails;
 		}
 		
@@ -33,6 +30,10 @@ package com.lti.dao;
 			return entityManager.createQuery("select Flight from FlightDetails as Flight where Flight.FlightId=:id").setParameter("id", Flightid).getSingleResult();
 		}*/
 
+		@Transactional
+		public void add(BookingDetails bookingDetails) {
+			entityManager.persist(bookingDetails);
+		}
 		
 	}
 
